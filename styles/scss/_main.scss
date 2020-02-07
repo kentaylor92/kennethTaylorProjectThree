@@ -1,0 +1,24 @@
+html {
+    height: 100vh;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 40%;
+}
+
+.memoryCards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.card {
+    background-color: $primaryColour;
+    flex: 1 0 20%;
+    min-width: 80px;
+    height: 120px;
+    margin: 10px;
+}

@@ -1,0 +1,52 @@
+// Stripping Styles
+
+body,
+h1,
+h2,
+p,
+ul,
+div,
+section,
+img,
+header,
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+// Global styles
+
+html {
+    font-size: 62.5%;
+    max-height: 100vh;
+}
+
+body {
+    background-color: #c0f8d1;
+    font-family: 'Quicksand', sans-serif;
+    
+    
+
+}
+
+h1,
+h2 {
+    font-family: $primaryFont;
+    color: $primaryColour;
+    text-align: center;
+}
+
+h1 {
+    font-size: 8rem;
+    text-shadow: 2px 2px 0px black;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}

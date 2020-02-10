@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4d199f08bf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/style.css">
     <title>Memory Game</title>
 </head>
@@ -13,29 +14,79 @@
     <header>
         <h1>Brain Flex</h1>
         <h2>Test your memory by matching the cards!</h2>
-    </header>
+    </header> 
 
-    <main class="wrapper">
-        <section class="memoryCards">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>          
+    <main>
+
+        <section class="memoryGame">
+            <div class="memoryCard" data-icon="one">
+                <button class="fas fa-gamepad front"></button>
+                <button class="back"><i class="fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="one">
+                <button class="front"><i class="fas fa-gamepad"></i></button>
+                <!-- <div class="front"><i class="fas fa-gamepad" valye="gamepad"></i></div> -->
+                <button class="back"><i class="fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="two">
+                <button class="front"><i class="fas fa-headphones"></i></button>
+                <button class="back"><i class="fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="two">
+                <button class="front"><i class="fas fa-headphones"></i></button>
+                <button class="back"><i class="fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="three">
+                <button class="front"><i class="fas fa-drum"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="three">
+                <button class="front"><i class="fas fa-drum"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="four">
+                <button class="front"><i class="fas fa-guitar"></i></button>
+                <button class="back"><i class="fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="four">
+                <button class="front"><i class="fas fa-guitar"></i></button>
+                <button class="back"><i class="fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="five">
+                <button class="front"><i class="fas fa-dice""></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="five">
+                <button class="front"><i class="fas fa-dice"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="six">
+                <button class="front"><i class="fas fa-heart"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="six">
+                <button class="front"><i class="fas fa-heart"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="seven">
+                <button class="front"><i class="fas fa-glass-martini-alt"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="seven">
+                <button class="front"><i class="fas fa-glass-martini-alt"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="eight">
+                <button class="front"><i class="fas fa-dog"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            <div class="memoryCard" data-icon="eight">
+                <button class="front"><i class="fas fa-dog"></i></button>
+                <button class="back"><i class="backIcon fas fa-question"></i></button>
+            </div>    
+            
         </section>
     </main>
-
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     <script src="./script.js"></script>

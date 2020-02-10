@@ -2,23 +2,62 @@ html {
     height: 100vh;
 }
 
-.wrapper {
-    margin: 0 auto;
-    width: 40%;
-}
 
-.memoryCards {
+
+.memoryGame {
+    width: 550px;
+    height: 550px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+    margin: auto;
+    perspective: 5000px;
+}
+
+.memoryCard {
+    width: calc(25% - 10px);
+    position: relative;
+    margin: 5px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    backface-visibility: hidden;
     
 }
 
-.card {
-    background-color: $primaryColour;
-    flex: 1 0 20%;
-    min-width: 80px;
-    height: 120px;
-    margin: 10px;
+.flip {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    background-color: rgb(233, 14, 116);
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-color: rgb(6, 167, 126);
+    
+}
+
+.back:hover .fas,
+.back:focus .fas {
+    font-size: 8rem;
+    text-shadow: 10px 5px 2px black;
+    transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+.fas {
+    font-size: 7rem;
+    display: block;
+    color: white;
 }

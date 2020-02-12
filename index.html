@@ -16,16 +16,17 @@
         <h2>Test your memory by matching the cards!</h2>
     </header> 
 
-    <main>
+    <main class="wrapper">
 
-        <section class="memoryGame">
+        <p class="score">Clicks: </p>
+        <section class="memoryGame" id="shuffle">
+            
             <div class="memoryCard" data-icon="one">
-                <button class="fas fa-gamepad front"></button>
+                <button class="front"><i class="fas fa-gamepad"></i></button>
                 <button class="back"><i class="fas fa-question"></i></button>
             </div>    
             <div class="memoryCard" data-icon="one">
                 <button class="front"><i class="fas fa-gamepad"></i></button>
-                <!-- <div class="front"><i class="fas fa-gamepad" valye="gamepad"></i></div> -->
                 <button class="back"><i class="fas fa-question"></i></button>
             </div>    
             <div class="memoryCard" data-icon="two">
@@ -83,9 +84,10 @@
             <div class="memoryCard" data-icon="eight">
                 <button class="front"><i class="fas fa-dog"></i></button>
                 <button class="back"><i class="backIcon fas fa-question"></i></button>
-            </div>    
-            
+            </div>      
         </section>
+
+        
     </main>
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>

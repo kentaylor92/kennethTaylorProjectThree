@@ -285,6 +285,19 @@ html {
   height: 100vh;
 }
 
+.wrapper {
+  margin: 0 auto;
+  width: 550px;
+}
+
+.score {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
 .memoryGame {
   width: 550px;
   height: 550px;
@@ -352,6 +365,10 @@ html {
   text-shadow: 10px 5px 2px black;
   -webkit-transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
   transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+.front .fas {
+  text-shadow: 3px 3px 0 black;
 }
 
 .fas {

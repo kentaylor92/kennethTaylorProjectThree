@@ -1,4 +1,6 @@
 
+// 
+
 $(document).ready(function() {
 
     const cards = $('.memoryCard');
@@ -6,14 +8,11 @@ $(document).ready(function() {
     let firstCard;
     let secondCard;
     let clicks = 0;
-
-   
-
-    
-    // Toggle "flip" class
+    let matchedCardsCounter = 0;
+ 
     function flipCard() {
         
-        if(this === firstCard) return;
+        
         $(cards).on('click', function(e) {
             e.preventDefault();
             $(this).toggleClass('flip');
@@ -26,10 +25,12 @@ $(document).ready(function() {
                 flipped = false;
                 secondCard = this;
                 clicks++;
-                checkForMatch();    
+                checkForMatch();                
             }
-            $('.score').html(`clicks: ${clicks}`);
-        })       
+            $('.score').html(`Guesses: ${clicks}`);  
+              
+                  
+        })      
     }
     flipCard();
 
@@ -40,14 +41,17 @@ $(document).ready(function() {
             cardsMatch()
         } else {
             noMatch();         
-        };       
+        };             
     };
 
     // if a match, unbind click event
     function cardsMatch() {
         // TODO: add animation when they match!!!
         $(firstCard).unbind('click');
-        $(secondCard).unbind('click');      
+        $(secondCard).unbind('click');  
+        matchedCardsCounter++;
+        console.log(matchedCardsCounter);
+        checkWin();
     };
 
     // if not a match, flip back over
@@ -56,32 +60,37 @@ $(document).ready(function() {
             $(firstCard).toggleClass('flip');
             $(secondCard).toggleClass('flip');          
         }, 1000);
+        
     };
 
-    // function checkForWin() {
-        
-    // };
-    // checkForWin();
-
-    // function checkWin() {
-    //     if ($(cards).flipped === true) {
-    //         alert('You win!!!')
-    //     };
-    // }
-   
-    // checkWin();
-    
-
-    
-    // function found via https://jsfiddle.net/C6LPY/2/
+    // shuffle function found via https://jsfiddle.net/C6LPY/2/
     function shuffle() {
         let parent = $('#shuffle');
         let divs = parent.children();
+        console.log(divs);
         for (i = 0; i < divs.length; i++) {
             parent.append(divs.splice(Math.floor(Math.random() * divs.length - 1), 1)[0]);
         }
     };
     shuffle();
+
+
+    function checkWin() { 
+        if (matchedCardsCounter === 8) {
+            alert("You win!!!");
+        }
+    }
+     
+    
+    
+    
+    
+    
+   
+    
+
+    
+    
       
 
 });  //end doc ready

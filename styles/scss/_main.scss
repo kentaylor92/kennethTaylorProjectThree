@@ -31,8 +31,9 @@ html {
     margin: 5px;
     transform-style: preserve-3d;
     transition: transform 0.8s;
-    backface-visibility: hidden;
-    
+    backface-visibility: hidden;  
+    background: none;
+    border: none;
 }
 
 .flip {
@@ -41,14 +42,18 @@ html {
 
 .front,
 .back {
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     backface-visibility: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .front {
@@ -60,8 +65,8 @@ html {
     background-color: rgb(6, 167, 126);
 }
 
-.back:hover .fas,
-.back:focus .fas {
+.memoryCard:hover .back .fas,
+.memoryCard:focus .back .fas {
     font-size: 8rem;
     text-shadow: 10px 5px 2px black;
     transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;

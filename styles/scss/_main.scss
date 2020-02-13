@@ -22,12 +22,15 @@ html {
 }
 
 .reset {
+    background-color: rgba(3, 139, 94, 0.6);
     border: none;
+    border-radius: 3px;
     margin-right: 5px;
-    padding: 4px 10px;
+    padding: 5px 5px 2px 5px;
     font-size: 1.8rem;
     text-transform: uppercase;
     cursor: pointer;
+    font-weight: 700;
 }
 
 .reset:hover,
@@ -124,7 +127,5 @@ html {
     .memoryCard:hover .back .fas,
     .memoryCard:focus .back .fas {
         font-size: 5.5rem;
-        text-shadow: 10px 5px 2px black;
-        transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
     }
 }

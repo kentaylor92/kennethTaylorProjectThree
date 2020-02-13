@@ -258,6 +258,7 @@ li {
 html {
   font-size: 62.5%;
   max-height: 100vh;
+  font-family: 'Acme', sans-serif;
 }
 
 body {
@@ -267,14 +268,14 @@ body {
 
 h1,
 h2 {
-  font-family: "Quicksand", sans-serif;
-  color: #2a4938;
   text-align: center;
 }
 
 h1 {
-  font-size: 7rem;
-  text-shadow: 2px 2px 0px black;
+  margin-top: 20px;
+  font-size: 6.5rem;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 0px rgba(3, 139, 94, 0.6);
 }
 
 h2 {
@@ -284,7 +285,7 @@ h2 {
 
 @media (max-width: 550px) {
   h1 {
-    font-size: 6rem;
+    font-size: 5.5rem;
   }
 }
 
@@ -315,12 +316,15 @@ html {
 }
 
 .reset {
+  background-color: rgba(3, 139, 94, 0.6);
   border: none;
+  border-radius: 3px;
   margin-right: 5px;
-  padding: 4px 10px;
+  padding: 5px 5px 2px 5px;
   font-size: 1.8rem;
   text-transform: uppercase;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .reset:hover,
@@ -427,8 +431,5 @@ html {
   .memoryCard:hover .back .fas,
   .memoryCard:focus .back .fas {
     font-size: 5.5rem;
-    text-shadow: 10px 5px 2px black;
-    -webkit-transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
-    transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
   }
 }

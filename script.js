@@ -1,73 +1,65 @@
+
 matchApp = {};
+
+matchApp.cards = $('.memoryCard');
+matchApp.flipped = false;
+matchApp.firstCard;
+matchApp.secondCard;
+matchApp.clicks = 0;
+matchApp.matchedCardsCounter = 0;
+matchApp.reset = $('.reset');
+
 
 matchApp.init = () => {
 
-}
-
-
-$(document).ready(function() {
-
-    const cards = $('.memoryCard');
-    let flipped = false;
-    let firstCard;
-    let secondCard;
-    let clicks = 0;
-    let matchedCardsCounter = 0;
-
-    
- 
-    function flipCard() {       
-        $(cards).on('click', function(e) {
+    matchApp.flipCard = function () {
+        $(matchApp.cards).on('click', function (e) {
             e.preventDefault();
             $(this).toggleClass('flip');
             // first card selection
-            if (flipped === false) {
-                flipped = true;
-                firstCard = this;
-            //  2nd card selection
+            if (matchApp.flipped === false) {
+                matchApp.flipped = true;
+                matchApp.firstCard = this;
+                //  2nd card selection
             } else {
-                flipped = false;
-                secondCard = this;
-                clicks++;
-                checkForMatch();                
+                matchApp.flipped = false;
+                matchApp.secondCard = this;
+                matchApp.clicks++;
+                matchApp.checkForMatch();
             }
-            $('.score').html(`Guesses: ${clicks}`);  
-              
-                  
-        })      
+            $('.score').html(`Guesses: ${matchApp.clicks}`);
+        })
     }
-    flipCard();
+    matchApp.flipCard();
 
 
     // check to see if cards are a match
-    function checkForMatch() {
-        if (firstCard.dataset.icon === secondCard.dataset.icon) {
-            cardsMatch()
+    matchApp.checkForMatch = function() {
+        if (matchApp.firstCard.dataset.icon === matchApp.secondCard.dataset.icon) {
+            matchApp.cardsMatch()
         } else {
-            noMatch();         
-        };             
+            matchApp.noMatch();
+        };
     };
 
     // if a match, unbind click event
-    function cardsMatch() {
+    matchApp.cardsMatch = function () {
         // TODO: add animation when they match!!!
-        $(firstCard).unbind('click');
-        $(secondCard).unbind('click');  
-        matchedCardsCounter++;
-        console.log(matchedCardsCounter);
-        checkWin();
+        $(matchApp.firstCard).unbind('click');
+        $(matchApp.secondCard).unbind('click');
+        matchApp.matchedCardsCounter++;
+        matchApp.checkWin();
     };
 
     // if not a match, flip back over
-    function noMatch() {
+    matchApp.noMatch = function () {
         setTimeout(() => {
-            $(firstCard).toggleClass('flip');
-            $(secondCard).toggleClass('flip');          
+            $(matchApp.firstCard).toggleClass('flip');
+            $(matchApp.secondCard).toggleClass('flip');
         }, 1000);
-        
     };
 
-    function shuffle() {
+    matchApp.shuffle = function () {
         // GET DIV
         let parent = $('#shuffle');
         let divs = parent.children();
@@ -88,29 +80,42 @@ $(document).ready(function() {
         }
 
         // APPEND DIV
-        parent.append(divs);  
+        parent.append(divs);
     };
-    shuffle();
+    matchApp.shuffle();
 
 
-    function checkWin() { 
-        if (matchedCardsCounter === 8) {
+    matchApp.checkWin = function() {
+        if (matchApp.matchedCardsCounter === 8) {
             swal({
                 title: 'You won!!!',
-                text: `You matched the pairs in ${clicks} clicks!`,
+                text: `You matched the pairs in ${matchApp.clicks} clicks!`,
                 icon: 'success',
                 button: 'RESET',
                 closeOnClickOutside: false,
             }).then(() => {
                 window.location.reload();
             })
-
         }
     }
 
+    matchApp.reset.on('click', function () {
+        window.location.reload();
+    })   
+}
 
 
+$(document).ready(function() {
+    matchApp.init();
 });  //end doc ready
+
+
+    
+
+    
+ 
+    
+
 
 
 

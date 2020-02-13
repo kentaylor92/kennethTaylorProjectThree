@@ -1,5 +1,9 @@
+matchApp = {};
 
-// 
+matchApp.init = () => {
+
+}
+
 
 $(document).ready(function() {
 
@@ -9,6 +13,8 @@ $(document).ready(function() {
     let secondCard;
     let clicks = 0;
     let matchedCardsCounter = 0;
+
+    
  
     function flipCard() {       
         $(cards).on('click', function(e) {
@@ -89,19 +95,20 @@ $(document).ready(function() {
 
     function checkWin() { 
         if (matchedCardsCounter === 8) {
-            alert("You win!!!");
+            swal({
+                title: 'You won!!!',
+                text: `You matched the pairs in ${clicks} clicks!`,
+                icon: 'success',
+                button: 'RESET',
+                closeOnClickOutside: false,
+            }).then(() => {
+                window.location.reload();
+            })
+
         }
     }
 
-    $('.reset').on('click', function() {
-        clicks === 0;
-        shuffle();
-        if ($(cards).hasClass('flip')) {
-            $(cards).removeClass('flip')
-        }
-        // $(cards).removeClass('flip');
-        // TODO: animate + work on counter!!!
-    })
+
 
 });  //end doc ready
 

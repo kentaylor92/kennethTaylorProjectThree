@@ -288,7 +288,7 @@ html {
 
 .wrapper {
   margin: 0 auto;
-  width: 550px;
+  width: 500px;
 }
 
 .features {
@@ -309,7 +309,6 @@ html {
 }
 
 .reset {
-  background: white;
   border: none;
   margin-right: 5px;
   padding: 4px 10px;
@@ -318,9 +317,14 @@ html {
   cursor: pointer;
 }
 
+.reset:hover,
+.reset:focus {
+  background-color: #06a77e;
+}
+
 .memoryGame {
-  width: 550px;
-  height: 550px;
+  width: 500px;
+  height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -399,4 +403,24 @@ html {
   font-size: 7rem;
   display: block;
   color: white;
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    width: 350px;
+  }
+  .memoryGame {
+    width: 350px;
+    height: 400px;
+  }
+  .fas {
+    font-size: 5rem;
+  }
+  .memoryCard:hover .back .fas,
+  .memoryCard:focus .back .fas {
+    font-size: 5.5rem;
+    text-shadow: 10px 5px 2px black;
+    -webkit-transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
+  }
 }

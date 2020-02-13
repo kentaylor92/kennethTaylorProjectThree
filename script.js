@@ -10,9 +10,7 @@ $(document).ready(function() {
     let clicks = 0;
     let matchedCardsCounter = 0;
  
-    function flipCard() {
-        
-        
+    function flipCard() {       
         $(cards).on('click', function(e) {
             e.preventDefault();
             $(this).toggleClass('flip');
@@ -63,14 +61,28 @@ $(document).ready(function() {
         
     };
 
-    // shuffle function found via https://jsfiddle.net/C6LPY/2/
     function shuffle() {
+        // GET DIV
         let parent = $('#shuffle');
         let divs = parent.children();
-        console.log(divs);
-        for (i = 0; i < divs.length; i++) {
-            parent.append(divs.splice(Math.floor(Math.random() * divs.length - 1), 1)[0]);
+        let currentIndex = divs.length;
+        let temporaryValue;
+        let randomIndex;
+
+        // SHUFFLE DIV WITH FISHER YATES ALGORITHM 
+        while (0 !== currentIndex) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = divs[currentIndex];
+            divs[currentIndex] = divs[randomIndex];
+            divs[randomIndex] = temporaryValue;
         }
+
+        // APPEND DIV
+        parent.append(divs);  
     };
     shuffle();
 
@@ -80,18 +92,16 @@ $(document).ready(function() {
             alert("You win!!!");
         }
     }
-     
-    
-    
-    
-    
-    
-   
-    
 
-    
-    
-      
+    $('.reset').on('click', function() {
+        clicks === 0;
+        shuffle();
+        if ($(cards).hasClass('flip')) {
+            $(cards).removeClass('flip')
+        }
+        // $(cards).removeClass('flip');
+        // TODO: animate + work on counter!!!
+    })
 
 });  //end doc ready
 

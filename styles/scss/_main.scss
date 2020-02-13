@@ -8,12 +8,27 @@ html {
     
 }
 
+.features {
+    display: flex;
+    justify-content: space-between;
+}
+
 .score {
     font-size: 2rem;
     text-transform: uppercase;
     text-align: left;
     font-weight: 700;
     margin-left: 5px;
+}
+
+.reset {
+    background: white;
+    border: none;
+    margin-right: 5px;
+    padding: 4px 10px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .memoryGame {

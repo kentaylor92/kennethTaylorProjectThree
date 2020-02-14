@@ -4,8 +4,7 @@ html {
 
 .wrapper {
     margin: 0 auto;
-    width: 500px;
-    
+    width: 500px;  
 }
 
 .features {
@@ -35,8 +34,7 @@ html {
 
 .reset:hover,
 .reset:focus {
-    background-color: rgb(6, 167, 126);
-    
+    background-color: rgb(95, 212, 183);  
 }
 
 .memoryGame {
@@ -57,7 +55,6 @@ html {
     backface-visibility: hidden;  
     background: none;
     border: none;
-    ;
 }
 
 .flip {
@@ -80,12 +77,12 @@ html {
 }
 
 .front {
-    background-color: rgb(233, 14, 116);
+    background: linear-gradient(140deg, rgba(163,13,83,1) 0%, rgba(233,14,116,1) 100%); 
     transform: rotateY(180deg);
 }
 
 .back {
-    background-color: rgb(6, 167, 126);
+    background: linear-gradient(140deg, rgba(41,101,81,1) 0%, rgb(64, 148, 120) 100%); 
 }
 
 .memoryCard:hover .back .fas,

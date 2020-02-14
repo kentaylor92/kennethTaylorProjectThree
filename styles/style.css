@@ -420,6 +420,10 @@ html {
 }
 
 @media (max-width: 550px) {
+  body {
+    max-height: 100vh;
+    overflow-y: hidden;
+  }
   .wrapper {
     width: 350px;
   }

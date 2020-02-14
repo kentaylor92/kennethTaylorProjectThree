@@ -422,7 +422,6 @@ html {
 @media (max-width: 550px) {
   body {
     overflow-y: hidden;
-    position: fixed;
   }
   .wrapper {
     width: 350px;

@@ -16,12 +16,12 @@ matchApp.init = () => {
         $(matchApp.cards).on('click', function (e) {
             e.preventDefault();
             $(this).toggleClass('flip');
-            
             if (matchApp.flipped === false) {
                 matchApp.flipped = true;
                 matchApp.firstCard = this;
         
             } else {
+                
                 matchApp.flipped = false;
                 matchApp.secondCard = this;
                 matchApp.clicks++;

@@ -357,8 +357,6 @@ html {
   transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
   transition: transform 0.8s, -webkit-transform 0.8s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   background: none;
   border: none;
 }
@@ -381,14 +379,16 @@ html {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   -webkit-box-shadow: 2px 2px 2px black;
           box-shadow: 2px 2px 2px black;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
 }
 
 .front {

@@ -43,7 +43,7 @@ html {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    perspective: 5000px;
+    perspective: 5000px;   
 }
 
 .memoryCard {
@@ -52,7 +52,6 @@ html {
     margin: 5px;
     transform-style: preserve-3d;
     transition: transform 0.8s;
-    backface-visibility: hidden;  
     background: none;
     border: none;
 }
@@ -69,11 +68,13 @@ html {
     align-items: center;
     position: absolute;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow: 2px 2px 2px black
+    box-shadow: 2px 2px 2px black;
+    transform: rotateX(0deg)
 }
 
 .front {
@@ -103,14 +104,12 @@ html {
 }
 
 
-
 // MEDIA QUERIES
 
 @media (max-width: 550px) {
     
     body {
         overflow-y: hidden;
-       
     }
 
     .wrapper {
